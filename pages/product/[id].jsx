@@ -11,11 +11,11 @@ const Product = () => {
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum natus consequatur cumque itaque quam ducimus et minus nisi commodi deleniti. Eligendi at earum ipsa vero aliquam sunt, tempore quisquam consequuntur!"
   };
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-wrap items-center justify-evenly p-12">
       <div className="shrink-0">
         <img src={salad.img} alt="" className="text-center mx-auto h-5/6" />
       </div>
-      <div className="">
+      <div className="max-w-md">
         <h1 className="text-3xl mb-6">{salad.name}</h1>
         <span className="text-xl text-red-600 underline underline-offset-4">
           ${salad.price[size]}
@@ -23,13 +23,19 @@ const Product = () => {
         <p className="mt-4">{salad.desc}</p>
         <h3 className="text-xl font-semibold mt-4">Choose the size</h3>
         <div className="mt-4 flex gap-5">
-          <div className="hover:scale-125 duration-150 flex flex-col items-center" onClick={()=>setSize(0)}>
+          <div
+            className="cursor-pointer hover:scale-125 duration-150 flex flex-col items-center"
+            onClick={() => setSize(0)}
+          >
             <span className="italic py-1 px-2 rounded-lg bg-lime-300	mb-2">
               regular
             </span>
             <img className="h-7" src="/img/bowl.png" />
           </div>
-          <div className="hover:scale-125 duration-150 flex flex-col items-center" onClick={()=>setSize(1)}>
+          <div
+            className="cursor-pointer hover:scale-125 duration-150 flex flex-col items-center"
+            onClick={() => setSize(1)}
+          >
             <span className="italic py-1 px-2 rounded-lg bg-lime-300	mb-2">
               large
             </span>
@@ -42,20 +48,44 @@ const Product = () => {
         <div className="flex flex-col gap-3 mt-2">
           <div>
             <input type="checkbox" name="dressing" id="dressing" />
-            <label className="ml-2" htmlFor="dressing">House dressing <span className="italic py-1 px-2 rounded-lg bg-lime-300">(free)</span></label>
+            <label className="ml-2" htmlFor="dressing">
+              House dressing{" "}
+              <span className="italic py-1 px-2 rounded-lg bg-lime-300">
+                (free)
+              </span>
+            </label>
           </div>
           <div>
             <input type="checkbox" name="egg" id="egg" />
-            <label className="ml-2" htmlFor="egg">Two hard boiled eggs <span className="italic py-1 px-2 rounded-lg bg-lime-300">(+2.99)</span></label>
+            <label className="ml-2" htmlFor="egg">
+              Two hard boiled eggs{" "}
+              <span className="italic py-1 px-2 rounded-lg bg-lime-300">
+                (+2.99)
+              </span>
+            </label>
           </div>
           <div>
             <input type="checkbox" name="chicken" id="chicken" />
-            <label className="ml-2" htmlFor="chicken">Extra chicken <span className="italic py-1 px-2 rounded-lg bg-lime-300">(+3.79)</span></label>
+            <label className="ml-2" htmlFor="chicken">
+              Extra chicken{" "}
+              <span className="italic py-1 px-2 rounded-lg bg-lime-300">
+                (+3.79)
+              </span>
+            </label>
           </div>
           <div>
             <input type="checkbox" name="steak" id="steak" />
-            <label className="ml-2" htmlFor="steak">Extra steak <span className="italic py-1 px-2 rounded-lg bg-lime-300">(+3.99)</span></label>
+            <label className="ml-2" htmlFor="steak">
+              Extra steak{" "}
+              <span className="italic py-1 px-2 rounded-lg bg-lime-300">
+                (+3.99)
+              </span>
+            </label>
           </div>
+        </div>
+        <div className="mt-4">
+          <input className="rounded-sm border border-black w-10 text-center" type="number" id="quantity" name="quantity" defaultValue={1} />
+          <input className="text-lg font-semibold h-10 cursor-pointer hover:scale-110 duration-150 rounded-md px-2 bg-lime-300 ml-5" type="button" value="Add to Cart" />
         </div>
       </div>
     </div>

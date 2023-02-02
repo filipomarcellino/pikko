@@ -19,9 +19,9 @@ const Featured = () => {
   };
   return (
     <div className="drop-shadow-lg">
-      <div className="h-[90vh] bg-lime-500 ">
+      <div className="h-auto bg-lime-500 transition ease-in-out duration-500">
         <img
-          className="transition duration-750 h-fit mx-auto"
+          className="border-x-2 h-fit mx-auto "
           src={images[currentIndex]}
           alt=""
         />
@@ -29,13 +29,13 @@ const Featured = () => {
       <img
         src="/img/arrowl.png"
         alt=""
-        className="h-10 absolute top-[50%] -translate-x-0 translate-y-[50%] left-5 rounded-full p-1 bg-black cursor-pointer"
+        className="hover:scale-110 duration-150 h-10 absolute top-[50%] -translate-x-0 translate-y-[50%] left-5 rounded-full p-1 bg-black cursor-pointer"
         onClick={prevSlide}
       />
       <img
         src="/img/arrowr.png"
         alt=""
-        className="h-10 absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 rounded-full p-1 bg-black cursor-pointer"
+        className="hover:scale-110 duration-150 h-10 absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 rounded-full p-1 bg-black cursor-pointer"
         onClick={nextSlide}
       />
     </div>

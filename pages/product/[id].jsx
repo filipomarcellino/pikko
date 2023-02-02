@@ -12,7 +12,7 @@ const Product = () => {
   };
   return (
     <div className="flex flex-wrap items-center justify-evenly p-12">
-      <div className="shrink-0">
+      <div className="">
         <img src={salad.img} alt="" className="text-center mx-auto h-5/6" />
       </div>
       <div className="max-w-md">

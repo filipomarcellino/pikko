@@ -2,8 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Featured from "@/components/Featured";
 import BowlList from "@/components/BowlList";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({ bowlList }) {
   return (
     <>
       <Head>
@@ -12,8 +13,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Featured/>
-      <BowlList/>
+      <Featured />
+      <BowlList bowlList={bowlList} />
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/products");
+  return {
+    props: {
+      bowlList: res.data
+    }
+  };
+};

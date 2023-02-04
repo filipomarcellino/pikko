@@ -1,12 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProduct } from "@/redux/cartSlice";
 
 const Product = ({ bowl }) => {
   const [price, setPrice] = useState(bowl.prices[0]);
   const [size, setSize] = useState(0);
   const [extras, setExtras] = useState([]);
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -28,7 +32,10 @@ const Product = ({ bowl }) => {
       setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
-  console.log(extras)
+
+  const handleClick = () => {
+    dispatch(addProduct({...bowl, extras, price, quantity}))
+  }
 
   return (
     <div className="flex flex-wrap items-center justify-evenly p-12">
@@ -93,6 +100,7 @@ const Product = ({ bowl }) => {
             defaultValue={1}
           />
           <input
+            onClick={handleClick}
             className="text-lg font-semibold h-10 cursor-pointer hover:scale-110 duration-150 rounded-md px-2 bg-lime-300 ml-5"
             type="button"
             value="Add to Cart"

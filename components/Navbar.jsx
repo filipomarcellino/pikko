@@ -15,9 +15,9 @@ const Navbar = () => {
           <nav className="contents font-semibold text-base lg:text-lg">
             <ul className="mx-auto flex items-center hidden md:flex">
               <li className="p-5 xl:p-8 hover:text-white">
-                <a href="">
+                <Link href="/" passHref>
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li className="p-5 xl:p-8 hover:text-white">
                 <a href="">

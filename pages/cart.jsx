@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
@@ -9,11 +9,14 @@ import {
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "@/redux/cartSlice";
+import OrderDetails from "@/components/OrderDetails";
 
 const Cart = () => {
   // This values are the props in the UI
   const cart = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
+  const [cash, setCash] = useState(false);
+
   const amount = cart.total;
   const currency = "CAD";
   const style = { layout: "vertical" };
@@ -140,6 +143,7 @@ const Cart = () => {
               className="mb-2 w-60 cursor-pointer duration-150 bg-white text-lime-900 px-2 py-1"
               type="button"
               value="Cash On Delivery"
+              onClick={() => setCash(true)}
             />
             <PayPalScriptProvider
               options={{
@@ -162,6 +166,7 @@ const Cart = () => {
           />
         )}
       </div>
+      {cash && <OrderDetails total={cart.total} createOrder={createOrder} />}
     </div>
   );
 };

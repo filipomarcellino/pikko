@@ -16,28 +16,13 @@ const Navbar = () => {
             <ul className="mx-auto flex items-center hidden md:flex">
               <li className="p-5 xl:p-8 hover:text-white">
                 <Link href="/" passHref>
-                  <span>Home</span>
+                  <span>Homepage</span>
                 </Link>
               </li>
               <li className="p-5 xl:p-8 hover:text-white">
-                <a href="">
-                  <span>Products</span>
-                </a>
-              </li>
-              <li className="p-5 xl:p-8 hover:text-white">
-                <a href="">
+                <Link href="/menu" passHref>
                   <span>Menu</span>
-                </a>
-              </li>
-              <li className="p-5 xl:p-8 hover:text-white">
-                <a href="">
-                  <span>Events</span>
-                </a>
-              </li>
-              <li className="p-5 xl:p-8 hover:text-white">
-                <a href="">
-                  <span>Blog</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -48,7 +33,7 @@ const Navbar = () => {
                 alt="test"
                 className="h-10 hidden md:flex"
               />
-              <div className="font-bold absolute top-[-10px] right-[-9px] text-sm px-2 py-0.5 text-lime-600 rounded-full bg-white">
+              <div className="hidden md:flex font-bold absolute top-[-10px] right-[-9px] text-sm px-2 py-0.5 text-lime-600 rounded-full bg-white">
                 {quantity}
               </div>
             </div>

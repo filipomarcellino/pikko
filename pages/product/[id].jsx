@@ -11,7 +11,6 @@ const Product = ({ bowl }) => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
-
   const changePrice = (number) => {
     setPrice(price + number);
   };
@@ -34,8 +33,8 @@ const Product = ({ bowl }) => {
   };
 
   const handleClick = () => {
-    dispatch(addProduct({...bowl, extras, price, quantity}))
-  }
+    dispatch(addProduct({ ...bowl, extras, price, quantity }));
+  };
 
   return (
     <div className="flex flex-wrap items-center justify-evenly p-12">
@@ -45,7 +44,7 @@ const Product = ({ bowl }) => {
       <div className="max-w-md">
         <h1 className="text-3xl mb-6">{bowl.title}</h1>
         <span className="text-xl text-red-600 underline underline-offset-4">
-          ${price}
+          ${Math.round(price * 100) / 100}
         </span>
         <p className="mt-4">{bowl.desc}</p>
         <h3 className="text-xl font-semibold mt-4">Choose the size</h3>
@@ -82,7 +81,7 @@ const Product = ({ bowl }) => {
                 onChange={(e) => handleChange(e, option)}
               />
               <label className="ml-2" htmlFor="dressing">
-                House dressing{" "}
+                {option.text}{" "}
                 <span className="italic py-1 px-2 rounded-lg bg-lime-300">
                   +${option.price}
                 </span>

@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import axios from "axios";
 
 const login = () => {
   const [username, setUsername] = useState(null);
@@ -13,7 +14,7 @@ const login = () => {
         username,
         password
       });
-      router("/admin");
+      router.push("/admin");
     } catch (err) {
       console.log(err);
       setError(true);

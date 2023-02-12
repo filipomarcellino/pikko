@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Featured = () => {
   const images = [
     "/img/featured.png",
     "/img/featured2.png",
-    "/img/featured3.jpg"
+    "/img/featured3.png",
+    "/img/featured4.png"
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevSlide = () => {
@@ -21,7 +23,7 @@ const Featured = () => {
     <div className="drop-shadow-lg">
       <div className="h-auto bg-lime-500 transition ease-in-out duration-500">
         <img
-          className="border-x-2 h-fit mx-auto "
+          className=" h-fit mx-auto"
           src={images[currentIndex]}
           alt=""
         />

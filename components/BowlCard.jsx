@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const BowlCard = ({ bowl }) => {
   return (
@@ -8,7 +9,7 @@ const BowlCard = ({ bowl }) => {
         <img
           src={bowl.img}
           alt=""
-          className="hover:scale-125 duration-150 max-h-52 text-center mx-auto"
+          className="hover:scale-105 duration-150 max-h-52 text-center mx-auto"
         />
       </Link>
 

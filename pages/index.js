@@ -3,8 +3,11 @@ import Image from "next/image";
 import Featured from "@/components/Featured";
 import BowlList from "@/components/BowlList";
 import axios from "axios";
-
-export default function Home({ bowlList }) {
+import AddButton from "@/components/AddButton";
+import Add from "@/components/Add";
+import { useState } from "react";
+export default function Home({ bowlList, isAdmin }) {
+  const [close, setClose] = useState(true);
   return (
     <>
       <Head>
@@ -14,16 +17,26 @@ export default function Home({ bowlList }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
+      {isAdmin && <AddButton setClose={setClose} />}
       <BowlList bowlList={bowlList} />
+      {!close && <Add setClose={setClose} />}
     </>
   );
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+  let isAdmin = false;
+
+  if (myCookie.token === process.env.TOKEN) {
+    isAdmin = true;
+  }
+
   const res = await axios.get("http://localhost:3000/api/products");
   return {
     props: {
-      bowlList: res.data
+      bowlList: res.data,
+      isAdmin
     }
   };
 };

@@ -117,9 +117,11 @@ const Cart = () => {
                   <span key={extra._id}>{extra.text}</span>
                 ))}
               </td>
-              <td>${product.price}</td>
+              <td>${Math.round(product.price * 100) / 100}</td>
               <td>{product.quantity}</td>
-              <td>${product.price * product.quantity}</td>
+              <td>
+                ${Math.round(product.price * product.quantity * 100) / 100}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -128,14 +130,14 @@ const Cart = () => {
         <h2 className="font-semibold text-xl pb-2">Cart Total</h2>
         <p>
           <span className="font-semibold">Subtotal: </span>
-          {cart.total}
+          {Math.round(cart.total * 100) / 100}
         </p>
         <p>
           <span className="font-semibold">Discount: </span>$0
         </p>
         <p className="mb-5">
           <span className="font-semibold">Total: </span>
-          {cart.total}
+          {Math.round(cart.total * 100) / 100}{" "}
         </p>
         {open ? (
           <div>

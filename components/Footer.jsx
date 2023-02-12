@@ -1,10 +1,14 @@
 import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className="mt-10 h-auto bg-lime-800 flex justify-between items-start">
       <div className="basis-96 flex-none self-start">
-        <img src="/img/background.png" alt="" />
+        <img
+          src="/img/background.png"
+          alt=""
+        />
       </div>
       <div className="pt-14 pl-10 pr-10 hidden sm:block">
         <h2 className="tracking-wider text-3xl text-orange-200">

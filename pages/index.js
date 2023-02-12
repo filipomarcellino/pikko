@@ -32,7 +32,7 @@ export const getServerSideProps = async (ctx) => {
     isAdmin = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("https://pikko.vercel.app/api/products");
   return {
     props: {
       bowlList: res.data,

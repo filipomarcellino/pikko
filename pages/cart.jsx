@@ -114,7 +114,7 @@ const Cart = () => {
               <td>{product.title}</td>
               <td>
                 {product.extras.map((extra) => (
-                  <span key={extra._id}>{extra.text}</span>
+                  <span className="mr-2" key={extra._id}>{extra.text}</span>
                 ))}
               </td>
               <td>${Math.round(product.price * 100) / 100}</td>

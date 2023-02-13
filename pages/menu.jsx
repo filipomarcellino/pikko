@@ -10,7 +10,7 @@ const menu = ({ bowlList }) => {
 };
 
 export const getServerSideProps = async () => {
-  const res = await axios.get("https://pikko.vercel.app/api/products");
+  const res = await axios.get("/api/products");
   return {
     props: {
       bowlList: res.data

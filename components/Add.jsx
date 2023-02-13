@@ -42,7 +42,7 @@ const Add = ({ setClose }) => {
         img: url
       };
 
-      await axios.post("http://pikko.vercel.app/api/products", newProduct);
+      await axios.post("/api/products", newProduct);
       setClose(true);
     } catch (err) {
       console.log(err);

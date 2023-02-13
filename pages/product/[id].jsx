@@ -111,9 +111,7 @@ const Product = ({ bowl }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(
-    `https://pikko.vercel.app/api/products/${params.id}`
-  );
+  const res = await axios.get(`/api/products/${params.id}`);
   return {
     props: {
       bowl: res.data

@@ -25,7 +25,7 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("https://pikko.vercel.app/api/orders", data);
+      const res = await axios.post("/api/orders", data);
       console.log(res.promise);
       if (res.status === 201) {
         dispatch(reset());

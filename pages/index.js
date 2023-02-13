@@ -6,6 +6,9 @@ import axios from "axios";
 import AddButton from "@/components/AddButton";
 import Add from "@/components/Add";
 import { useState } from "react";
+
+axios.defaults.baseURL = process.env.APP_URL;
+
 export default function Home({ bowlList, isAdmin }) {
   const [close, setClose] = useState(true);
   return (

@@ -9,9 +9,9 @@ const Navbar = () => {
     <>
       <header className="bg-lime-500 text-black shadow-lg md:block sticky top-0 z-50">
         <div className="container mx-auto flex items-center h-24 ">
-          <a href="">
+          <Link href="/" passHref>
             <img className="pl-10 md:pl-0 h-20 " src="/img/logo.png" alt="" />
-          </a>
+          </Link>
           <nav className="contents font-semibold text-base lg:text-lg">
             <ul className="mx-auto flex items-center hidden md:flex">
               <li className="p-5 xl:p-8 hover:text-white">

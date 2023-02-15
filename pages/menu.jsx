@@ -3,7 +3,7 @@ import BowlList from "@/components/BowlList";
 
 const menu = ({ bowlList }) => {
   return (
-    <div>
+    <div >
       <BowlList bowlList={bowlList} />
     </div>
   );

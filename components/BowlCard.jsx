@@ -5,7 +5,7 @@ import Image from "next/image";
 const BowlCard = ({ bowl }) => {
   return (
     <Link href={`/product/${bowl._id}`} passHref>
-      <div className="hover:shadow-2xl duration-300 p-4">
+      <div className="hover:shadow-[0_35px_200px_-25px_rgba(0,0,0,0.3)] duration-300 p-4">
         <img src={bowl.img} alt="" className="hover:scale-105 duration-300 max-h-52 text-center mx-auto" />
 
         <h1 className="text-center"> {bowl.title} </h1>

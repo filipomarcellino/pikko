@@ -4,18 +4,18 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className="h-auto bg-lime-800 flex justify-between items-start">
-      <div className="basis-96 flex-none self-start">
+      <div className="hidden md:block basis-96 flex-none self-start">
         <img
           src="/img/background.png"
           alt=""
         />
       </div>
-      <div className="pt-14 pl-10 pr-10 hidden sm:block">
+      <div className="p-14 pl-10 pr-10 ">
         <h2 className="tracking-wider text-3xl text-orange-200">
           Just for the health of it!
         </h2>
       </div>
-      <div className="pt-14 pr-10 shrink-0 hidden md:block">
+      <div className="p-14 pr-10 shrink-0 hidden md:block">
         <h1 className="text-lg text-orange-200">FIND OUR RESTAURANTS</h1>
         <p className="text-gray-200 pt-4">
           1654 R. Don Road #304.
@@ -38,7 +38,7 @@ const Footer = () => {
           <br /> (602) 867-1013
         </p>
       </div>
-      <div className="pt-14 pr-20 hidden lg:block">
+      <div className="p-14 pr-20 hidden lg:block">
         <h1 className="text-lg text-orange-200">WORKING HOURS</h1>
         <p className="text-gray-200 pt-4">
           MONDAY UNTIL FRIDAY

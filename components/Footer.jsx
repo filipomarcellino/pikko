@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="mt-10 h-auto bg-lime-800 flex justify-between items-start">
+    <div className="h-auto bg-lime-800 flex justify-between items-start">
       <div className="basis-96 flex-none self-start">
         <img
           src="/img/background.png"

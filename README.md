@@ -12,7 +12,11 @@ https://pikko.vercel.app
 To access the admin dashboard, go to pikko.vercel.app/admin
 ![image](https://user-images.githubusercontent.com/66431048/219229446-4544a712-f5a7-4188-80f0-eaa60afa795b.png)
 admin credentials:
+
 username: admin
+
 password: pikko123
+
 (cookie expires in 1 hour)
+
 I've disabled the edit and delete button for the products for protection.

@@ -44,12 +44,12 @@ const Navbar = () => {
 
     <nav class="bg-lime-600 shadow-lg px-2 sm:px-4 py-2.5 sticky w-full z-20 top-0 left-0">
       <div class="pl-6 md:pl-0 container flex flex-wrap items-center justify-between mx-auto h-24">
-        <Link href="/" passHref>
-          <img src="/img/logo.png" class="h-20" alt="Flowbite Logo" />
+        <Link href="/" passHref className="hover:scale-110 duration-150">
+          <img src="/img/logo.png" className="h-20" alt="Flowbite Logo" />
         </Link>
 
         <div class="pr-6 md:pr-0 flex md:order-2">
-          <Link href="/cart" passHref>
+          <Link href="/cart" passHref className="hover:scale-110 duration-150">
             <div className="relative">
               <img src="/img/cart.png" alt="test" className="h-10" />
               <div className="font-bold absolute top-[-10px] right-[-9px] text-sm px-2 py-0.5 text-lime-600 rounded-full bg-white">

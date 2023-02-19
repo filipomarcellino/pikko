@@ -21,4 +21,4 @@ password: pikko123
 
 I've disabled the edit and delete button for the products for protection.
 
-Bowl images are taken from freshii. All other images and graphics made by me :)
+Bowl images are taken from freshii. All other images and graphics are self-made using canva
